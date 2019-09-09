@@ -16,8 +16,7 @@
 <meta property="og:description" content="序言这是在我第一份工作在职近1年,计划在5个月份内离职时,在B站大佬程序羊(CodeSheep)的视频建议和指导下,决定使用HEXO在GITHUB上构建发布属于自己的博客,程序羊大佬是在MACOS上演示实现的,我在此博客记录下我在Win10系统下的构建步骤. 开始配置1.安装和配置GIT如果你经常逛GITHUB,那你对GIT软件一定不陌生,它是对GITHUB等开源项目上传和下载的版本管理工具,可以">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2015/02/20140127131250906">
-<meta property="og:image" content="http://yoursite.com/.com//C:%5CUsers%5C77400%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1567945476174.png">
-<meta property="og:updated_time" content="2019-09-08T12:33:39.725Z">
+<meta property="og:updated_time" content="2019-09-09T13:14:35.274Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo 博客 在WIndows To GitHub">
 <meta name="twitter:description" content="序言这是在我第一份工作在职近1年,计划在5个月份内离职时,在B站大佬程序羊(CodeSheep)的视频建议和指导下,决定使用HEXO在GITHUB上构建发布属于自己的博客,程序羊大佬是在MACOS上演示实现的,我在此博客记录下我在Win10系统下的构建步骤. 开始配置1.安装和配置GIT如果你经常逛GITHUB,那你对GIT软件一定不陌生,它是对GITHUB等开源项目上传和下载的版本管理工具,可以">
@@ -184,12 +183,41 @@
 <p>(图片来自菜鸟教程)</p>
 <p>GIT安装包安装过程很简单,在编辑器中我个人建议选择用VSCode,毕竟VSCode是一个常用且强大的前端开发编辑器.</p>
 <p>安装完毕之后,需要检查一下系统的环境变量有无GIT的配置,若没有,则根据具体安装路径,如下图配置.</p>
-<p><img src="/.com//C:%5CUsers%5C77400%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1567945476174.png" alt="1567945476174"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">%%\Git\bin</span><br><span class="line">%%\Git\cmd</span><br><span class="line">%%\Git\mingw64\libexec\git-core</span><br></pre></td></tr></table></figure>
+
 <p>在使用GIT之前,还需要对GIT进行配置,在任意文件夹上右键选择<strong>GIT BASH HERE</strong>,打开命令输入窗口,使用以下指令配置个人的用户名称和电子邮件地址:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;用户名&quot;</span><br><span class="line">git config --global user.email &quot;邮箱&quot;</span><br></pre></td></tr></table></figure>
 
-<h2 id="2-安装Node-JS和NPM"><a href="#2-安装Node-JS和NPM" class="headerlink" title="2.安装Node.JS和NPM"></a>2.安装Node.JS和NPM</h2><p>其实本次Hexo博客搭建并不需要Node.js,我们需要的是配套的强大的包管理工具-NPM</p>
+<h2 id="2-安装Node-JS和NPM下载Hexo"><a href="#2-安装Node-JS和NPM下载Hexo" class="headerlink" title="2.安装Node.JS和NPM下载Hexo"></a>2.安装Node.JS和NPM下载Hexo</h2><h3 id="1-安装Node-Js和NPM"><a href="#1-安装Node-Js和NPM" class="headerlink" title="1.安装Node.Js和NPM"></a>1.安装Node.Js和NPM</h3><p>其实本次Hexo博客搭建不光需要Node.js,更需要的是配套的强大的包管理工具-NPM</p>
 <p>Node.JS安装包下载:<a href="https://nodejs.org/en/,我们一般选择左边的稳定版本,安装过程一路默认即可" target="_blank" rel="noopener">https://nodejs.org/en/,我们一般选择左边的稳定版本,安装过程一路默认即可</a>.</p>
+<p>在安装完Node.JS后,我们就有了NPM工具.</p>
+<h3 id="2-NPM下载Hexo以及相关"><a href="#2-NPM下载Hexo以及相关" class="headerlink" title="2.NPM下载Hexo以及相关"></a>2.NPM下载Hexo以及相关</h3><p>新版本的Node.JS都已经集成了NPM,如何检验电脑是否安装好NPM,可以在CMD命令窗口输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm -v</span><br><span class="line">6.11.2(我的NPM版本号)</span><br></pre></td></tr></table></figure>
+
+<p>会显示出电脑已安装的NPM版本号,如果你想升级NPM版本,可以输入以下命令升级</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install npm -g</span><br></pre></td></tr></table></figure>
+
+<p>由于我自己有常用科学上网工具支持(VPN),所以我可以直接使用npm命令,但是国内用户直接使用npm命令可能会出现超时或操作错误,在这里也留下淘宝镜像的命令:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+
+<p>如果安装淘宝镜像后,可以将npm命令变成cnpm命令即可.</p>
+<p>接下来,就可以使用npm工具安装hexo-cli了</p>
+<p>在CMD窗口输入以下命令,系统就会自动安装hexo-cli.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<p>在安装完成后,可以用以下命令验证hexo版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+
+<p>下一步,我们就要在自己的文件夹下安装hexo了.</p>
+<h3 id="3-Git安装hexo"><a href="#3-Git安装hexo" class="headerlink" title="3.Git安装hexo"></a>3.Git安装hexo</h3><p>现在,我们可以在Windows下自己喜欢的地方(不建议C盘),新建一个文件夹来存储hexo相关的文件,同时,如果我们在本次开始的操作有失误现象,可以直接将该文件夹内容清空,重新操作即可.</p>
+<p>我在F盘下新建了名为blog的文件夹来存放这些文件,由于我们之前已经安装好了Git,所以在blog文件夹上右键选择<strong><em>Git Bash Here</em></strong>,就可以直接打开这个文件夹路径的Git命令窗口,直接输入hexo生成命令:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+
+<p>需要经过较长时间的等待,我的blog文件夹下就生成好了hexo文件.</p>
+<p>直接输入以下命令,就会在4000(默认)端口开启hexo,在web游览器输入<a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<p>就会进入hexo的hellowold页面,在该页面上,会介绍hexo的一些简单命令.</p>
 
       
 
